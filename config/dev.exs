@@ -4,8 +4,9 @@ use Mix.Config
 config :emtudolivery, Emtudolivery.Repo,
   username: "postgres",
   password: "postgres",
-  database: "emtudolivery_dev",
+  database: "emtudolivery",
   hostname: "localhost",
+  port: 9932,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
