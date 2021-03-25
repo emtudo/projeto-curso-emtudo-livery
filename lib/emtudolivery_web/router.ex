@@ -1,12 +1,21 @@
 defmodule EmtudoliveryWeb.Router do
   use EmtudoliveryWeb, :router
+  alias EmtudoliveryWeb.Plugs.UUIDChecker
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug UUIDChecker
   end
 
   scope "/api", EmtudoliveryWeb do
     pipe_through :api
+
+    get "/", WelcomeIndexController, :handle
+
+    post "/users", UserCreateController, :handle
+    get "/users/:id", UserShowController, :handle
+    delete "/users/:id", UserDeleteController, :handle
+    put "/users/:id", UserUpdateController, :handle
   end
 
   # Enables LiveDashboard only for development

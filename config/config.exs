@@ -10,6 +10,10 @@ use Mix.Config
 config :emtudolivery,
   ecto_repos: [Emtudolivery.Repo]
 
+config :emtudolivery, Emtudolivery.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :emtudolivery, EmtudoliveryWeb.Endpoint,
   url: [host: "localhost"],
