@@ -5,25 +5,9 @@ defmodule EmtudoliveryWeb.UserView do
   def render("create.json", %{user: %User{} = user}) do
     %{
       message: "User created!",
-      user: handle_user(user)
+      user: user
     }
   end
 
-  def render("user.json", %{user: %User{} = user}) do
-    %{
-      message: "User show!",
-      user: handle_user(user)
-    }
-  end
-
-  defp handle_user(%User{} = user) do
-    %{
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      address: user.address,
-      age: user.age,
-      cep: user.cep
-    }
-  end
+  def render("user.json", %{user: %User{} = user}), do: %{user: user}
 end

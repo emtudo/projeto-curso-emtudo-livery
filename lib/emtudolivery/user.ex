@@ -8,6 +8,8 @@ defmodule Emtudolivery.User do
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
+  @derive {Jason.Encoder, only: [:id, :age, :cpf, :address, :email]}
+
   schema "users" do
     field :age, :integer
     field :address, :string
@@ -21,10 +23,10 @@ defmodule Emtudolivery.User do
     timestamps()
   end
 
-  def changeset(struct \\ %__MODULE__{}, params) do
-    fields = get_required_fields(struct)
+  def changeset(user \\ %__MODULE__{}, params) do
+    fields = get_required_fields(user)
 
-    struct
+    user
     |> cast(params, @required_params)
     |> validate_required(fields)
     |> validate_length(:password, min: 8)
