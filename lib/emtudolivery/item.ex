@@ -1,6 +1,7 @@
 defmodule Emtudolivery.Item do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Emtudolivery.Order
 
   @required_params [:category, :photo, :description, :price]
 
@@ -15,6 +16,8 @@ defmodule Emtudolivery.Item do
     field :photo, :string
     field :description, :string
     field :price, :decimal
+
+    many_to_many :orders, Order, join_through: "orders_items"
 
     timestamps()
   end

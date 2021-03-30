@@ -2,6 +2,7 @@ defmodule Emtudolivery.User do
   use Ecto.Schema
   import Ecto.Changeset
   alias Ecto.Changeset
+  alias Emtudolivery.Order
 
   @required_params [:age, :address, :cep, :cpf, :email, :password, :name]
   @required_update_params @required_params -- [:password]
@@ -19,6 +20,8 @@ defmodule Emtudolivery.User do
     field :password, :string, virtual: true
     field :password_hash, :string
     field :name, :string
+
+    has_many :orders, Order
 
     timestamps()
   end
