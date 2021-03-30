@@ -8,7 +8,7 @@ defmodule Emtudolivery.User do
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
-  @derive {Jason.Encoder, only: [:id, :age, :cpf, :address, :email]}
+  @derive {Jason.Encoder, only: [:id, :age, :cpf, :address, :email, :name]}
 
   schema "users" do
     field :age, :integer

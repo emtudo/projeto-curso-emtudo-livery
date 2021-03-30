@@ -16,6 +16,8 @@ defmodule EmtudoliveryWeb.Router do
     get "/users/:id", UserShowController, :handle
     delete "/users/:id", UserDeleteController, :handle
     put "/users/:id", UserUpdateController, :handle
+
+    post "/items", ItemCreateController, :handle
   end
 
   # Enables LiveDashboard only for development
