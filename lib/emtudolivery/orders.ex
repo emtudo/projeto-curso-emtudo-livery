@@ -7,6 +7,7 @@ defmodule Emtudolivery.Order do
   @derive {Jason.Encoder, only: @required_params ++ [:id]}
 
   @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
   @payment_methods [:money, :credit_card, :debit_card]
 

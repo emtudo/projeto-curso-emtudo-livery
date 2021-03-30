@@ -1,4 +1,4 @@
-defmodule Emtudolivery.Repo.Migrations.CreateOrderItemsTable do
+defmodule Emtudolivery.Repo.Migrations.CreateOrdersItemsTable do
   use Ecto.Migration
 
   def change do
