@@ -55,7 +55,8 @@ defmodule Emtudolivery.MixProject do
       {:ex_machina, "~> 2.7.0"},
       {:elixir_uuid, "~> 1.2"},
       {:excoveralls, "~> 0.10", only: :test},
-      {:tesla, "~> 1.4.0"}
+      {:tesla, "~> 1.4.0"},
+      {:cep_promise, "~> 0.0.2"}
     ]
   end
 
