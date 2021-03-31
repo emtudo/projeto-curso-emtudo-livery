@@ -54,7 +54,8 @@ defmodule Emtudolivery.MixProject do
       {:pbkdf2_elixir, "~> 1.3"},
       {:ex_machina, "~> 2.7.0"},
       {:elixir_uuid, "~> 1.2"},
-      {:excoveralls, "~> 0.10", only: :test}
+      {:excoveralls, "~> 0.10", only: :test},
+      {:tesla, "~> 1.4.0"}
     ]
   end
 

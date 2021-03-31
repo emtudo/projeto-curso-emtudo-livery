@@ -26,6 +26,8 @@ defmodule Emtudolivery.User do
     timestamps()
   end
 
+  def build(changeset), do: apply_action(changeset, :create)
+
   def changeset(user \\ %__MODULE__{}, params) do
     fields = get_required_fields(user)
 

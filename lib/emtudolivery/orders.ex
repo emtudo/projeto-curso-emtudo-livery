@@ -4,7 +4,7 @@ defmodule Emtudolivery.Order do
   alias Emtudolivery.{Item, User}
 
   @required_params [:address, :comments, :payment_method, :user_id]
-  @derive {Jason.Encoder, only: @required_params ++ [:id]}
+  @derive {Jason.Encoder, only: @required_params ++ [:id, :items]}
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
