@@ -10,6 +10,10 @@ use Mix.Config
 config :emtudolivery,
   ecto_repos: [Emtudolivery.Repo]
 
+config :emtudolivery, EmtudoliveryWeb.Auth.Guardian,
+  issuer: "emtudolivery",
+  secret_key: "dduOHdwSr6toH1+RukfvsUekTJxMKGQbGcDywTYNelsQOKZJG5clVKw2GaxpniXp"
+
 config :emtudolivery, Emtudolivery.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]

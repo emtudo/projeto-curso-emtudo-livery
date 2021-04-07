@@ -16,6 +16,7 @@ defmodule EmtudoliveryWeb.Router do
     get "/users/:id", UserShowController, :handle
     delete "/users/:id", UserDeleteController, :handle
     put "/users/:id", UserUpdateController, :handle
+    post "/users/signin", UserSigninController, :handle
 
     post "/items", ItemCreateController, :handle
     post "/orders", OrderCreateController, :handle

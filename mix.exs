@@ -5,7 +5,7 @@ defmodule Emtudolivery.MixProject do
     [
       app: :emtudolivery,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.12.0-rc.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -56,7 +56,9 @@ defmodule Emtudolivery.MixProject do
       {:elixir_uuid, "~> 1.2"},
       {:excoveralls, "~> 0.10", only: :test},
       {:tesla, "~> 1.4.0"},
-      {:cep_promise, "~> 0.0.2"}
+      {:cep_promise, "~> 0.0.2"},
+      {:guardian, "~> 2.0"},
+      {:bcrypt_elixir, "~> 2.0"}
     ]
   end
 
