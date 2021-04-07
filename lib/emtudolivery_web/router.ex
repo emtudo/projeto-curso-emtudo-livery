@@ -7,16 +7,25 @@ defmodule EmtudoliveryWeb.Router do
     plug UUIDChecker
   end
 
+  pipeline :auth do
+    plug EmtudoliveryWeb.Auth.Pipeline
+  end
+
   scope "/api", EmtudoliveryWeb do
     pipe_through :api
 
     get "/", WelcomeIndexController, :handle
 
     post "/users", UserCreateController, :handle
+    post "/users/signin", UserSigninController, :handle
+  end
+
+  scope "/api", EmtudoliveryWeb do
+    pipe_through [:api, :auth]
+
     get "/users/:id", UserShowController, :handle
     delete "/users/:id", UserDeleteController, :handle
     put "/users/:id", UserUpdateController, :handle
-    post "/users/signin", UserSigninController, :handle
 
     post "/items", ItemCreateController, :handle
     post "/orders", OrderCreateController, :handle

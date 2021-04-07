@@ -14,6 +14,10 @@ config :emtudolivery, EmtudoliveryWeb.Auth.Guardian,
   issuer: "emtudolivery",
   secret_key: "dduOHdwSr6toH1+RukfvsUekTJxMKGQbGcDywTYNelsQOKZJG5clVKw2GaxpniXp"
 
+config :emtudolivery, EmtudoliveryWeb.Auth.Pipeline,
+  module: EmtudoliveryWeb.Auth.Guardian,
+  error_handler: EmtudoliveryWeb.Auth.ErrorHandler
+
 config :emtudolivery, Emtudolivery.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]

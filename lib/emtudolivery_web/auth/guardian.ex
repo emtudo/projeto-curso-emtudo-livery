@@ -4,7 +4,7 @@ defmodule EmtudoliveryWeb.Auth.Guardian do
 
   def subject_for_token(%User{id: id}, _clams), do: {:ok, id}
 
-  def resource_form_claims(claims) do
+  def resource_from_claims(claims) do
     claims
     |> Map.get("sub")
     |> Emtudolivery.get_user_by_id()
